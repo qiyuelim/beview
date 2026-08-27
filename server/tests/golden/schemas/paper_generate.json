@@ -1,0 +1,31 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "questions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "difficulty": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "content",
+          "difficulty"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "questions"
+  ],
+  "type": "object"
+}

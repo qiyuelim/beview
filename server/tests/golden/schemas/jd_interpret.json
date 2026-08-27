@@ -1,0 +1,19 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "cautions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "overall": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "overall",
+    "cautions"
+  ],
+  "type": "object"
+}

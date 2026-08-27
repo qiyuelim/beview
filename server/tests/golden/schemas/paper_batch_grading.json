@@ -1,0 +1,53 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "results": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "difficulty": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "feedback": {
+            "type": "string"
+          },
+          "index": {
+            "type": "integer"
+          },
+          "ref_answer": {
+            "type": "string"
+          },
+          "score": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "tags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "index",
+          "tags",
+          "difficulty",
+          "ref_answer",
+          "score",
+          "feedback"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "results"
+  ],
+  "type": "object"
+}

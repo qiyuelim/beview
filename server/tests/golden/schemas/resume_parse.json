@@ -1,0 +1,247 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "age": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "certificates": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "date"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "city": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "education": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "courses": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "degree": {
+            "type": "string"
+          },
+          "school": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "school",
+          "degree",
+          "courses"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "email": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "experience": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "achievements": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "company": {
+            "type": "string"
+          },
+          "period": {
+            "type": "string"
+          },
+          "responsibilities": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "company",
+          "title",
+          "period",
+          "responsibilities",
+          "achievements"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "gender": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "intent_city": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "intent_position": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "intent_salary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "links": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "url"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "phone": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "political": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "projects": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "tech_stack": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "role",
+          "tech_stack",
+          "start_date",
+          "end_date",
+          "detail"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "self_evaluation": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "skills": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "summary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "years": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "summary",
+    "gender",
+    "age",
+    "phone",
+    "email",
+    "city",
+    "years",
+    "political",
+    "intent_position",
+    "intent_city",
+    "intent_salary",
+    "education",
+    "experience",
+    "projects",
+    "skills",
+    "certificates",
+    "self_evaluation",
+    "links"
+  ],
+  "type": "object"
+}

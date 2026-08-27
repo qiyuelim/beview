@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members = ["server"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.release]
+opt-level = 3          # 开启最高级别的代码优化
+lto = true             # 开启胖链接时间优化 (Fat LTO)，跨 Crate 极致内联代码
+codegen-units = 1      # 限制并行编译单元为 1，生成更紧凑、更快的机器码
+panic = "abort"        # 发生 panic 时直接终止，移除异常栈回溯代码，提升速度

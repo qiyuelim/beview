@@ -1,0 +1,50 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "questions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "focus_points": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "probability": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "sample_direction": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content",
+          "category",
+          "focus_points",
+          "sample_direction",
+          "probability"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "summary",
+    "questions"
+  ],
+  "type": "object"
+}

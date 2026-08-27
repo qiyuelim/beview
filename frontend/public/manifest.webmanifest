@@ -1,0 +1,23 @@
+{
+  "name": "Beview",
+  "short_name": "Beview",
+  "description": "Be Ready, Review Better. 投递跟踪、简历、AI 陪练、面试复盘、复习强化。",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#09090b",
+  "theme_color": "#18181b",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

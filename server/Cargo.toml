@@ -1,0 +1,39 @@
+[package]
+name = "server"
+version.workspace = true
+edition.workspace = true
+
+# 二进制名 beview（lib 仍为 server，测试引用不受影响）
+[[bin]]
+name = "beview"
+path = "src/main.rs"
+
+[dependencies]
+axum = "0.8"
+tokio = { version = "1", features = ["full"] }
+tower = "0.5"
+tower-http = { version = "0.6", features = ["fs", "trace"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["json", "env-filter", "fmt", "registry"] }
+tracing-appender = "0.2"
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "postgres", "json", "chrono", "derive", "migrate", "tls-rustls"] }
+chrono = { version = "0.4", features = ["serde"] }
+rand = "0.8"
+dashmap = "6"
+argon2 = "0.5"
+reqwest = { version = "0.13", default-features = false, features = ["json", "rustls", "stream"] }
+async-openai = { version = "0.41", default-features = false, features = ["rustls", "responses", "byot"] }
+async-stream = "0.3"
+futures-util = { version = "0.3", default-features = false, features = ["std"] }
+prometheus = "0.13"
+hex = "0.4"
+aes-gcm = "0.10"
+base64 = "0.22"
+opentelemetry = "0.26"
+opentelemetry_sdk = { version = "0.26", features = ["rt-tokio"] }
+opentelemetry-otlp = { version = "0.26", default-features = false, features = ["http-proto", "trace", "reqwest-client"] }
+tracing-opentelemetry = "0.27"
+fsrs = "6.6.1"

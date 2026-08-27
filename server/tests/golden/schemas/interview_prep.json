@@ -1,0 +1,36 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "candidate_facts": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "job_requirements": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "next_followups": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "risk_signals": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "job_requirements",
+    "candidate_facts",
+    "risk_signals",
+    "next_followups"
+  ],
+  "type": "object"
+}

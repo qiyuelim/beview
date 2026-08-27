@@ -1,0 +1,164 @@
+/* ============================================================
+   Resume A4 纸文档样式（设计语言 v2 迁移期抽出）
+   M8 删除 styles.css 后本文件独立存活：纸张渲染是内容层，不属应用壳。
+   Token 全部引用 index.css 语义变量（ADR-0015）；暗色主题随 html.dark 生效。
+   ============================================================ */
+
+.resume-paper {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.625rem;
+  padding: 32px 28px;
+}
+
+.resume-paper-page {
+  width: 100%;
+  max-width: 720px;
+  padding: 48px 44px;
+}
+
+.rp-doc-name {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-indent: 0.12em;
+  color: var(--color-foreground);
+}
+.rp-doc-summary {
+  text-align: center;
+  color: var(--color-muted-foreground);
+  font-size: 13px;
+  margin-top: 6px;
+}
+.rp-doc-contact {
+  text-align: center;
+  color: var(--color-muted-foreground);
+  font-size: 12.5px;
+  margin-top: 10px;
+}
+.rp-doc-intent {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 6px;
+  color: var(--color-foreground);
+}
+.rp-doc-link {
+  color: var(--color-primary);
+  font-size: 13.5px;
+  word-break: break-all;
+}
+.rp-doc-empty {
+  text-align: center;
+  color: var(--color-muted-foreground);
+  font-size: 13px;
+  margin: 48px 0 24px;
+  line-height: 1.7;
+}
+.rp-doc-sec {
+  margin-top: 22px;
+}
+.rp-doc-sec-title {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  text-indent: 0.35em;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-border-strong);
+  color: var(--color-foreground);
+}
+.rp-doc-item {
+  margin-top: 12px;
+}
+.rp-doc-item-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: baseline;
+}
+.rp-doc-item-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-foreground);
+}
+.rp-doc-item-time {
+  color: var(--color-muted-foreground);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.rp-doc-item-sub {
+  color: var(--color-muted-foreground);
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 3px;
+}
+.rp-doc-detail {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.rp-doc-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+/* 主题 / 密度变体 */
+.resume-paper-page.rp-theme-compact {
+  padding: 34px 30px;
+}
+.rp-theme-compact .rp-doc-name {
+  font-size: 19px;
+  letter-spacing: 0.08em;
+  text-indent: 0.08em;
+}
+.rp-theme-compact .rp-doc-summary {
+  margin-top: 4px;
+  font-size: 12.5px;
+}
+.rp-theme-compact .rp-doc-contact {
+  margin-top: 7px;
+  font-size: 11.5px;
+}
+.rp-theme-compact .rp-doc-intent {
+  font-size: 12px;
+  margin-top: 4px;
+}
+.rp-theme-compact .rp-doc-item-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+.rp-theme-compact .rp-doc-item-sub {
+  font-size: 12.5px;
+}
+.rp-theme-compact .rp-doc-detail {
+  font-size: 12.5px;
+}
+.resume-paper-page.rp-density-tight .rp-doc-sec {
+  margin-top: 14px;
+}
+.rp-density-tight .rp-doc-item {
+  margin-top: 8px;
+}
+.rp-density-tight .rp-doc-skills {
+  margin-top: 8px;
+  gap: 5px;
+}
+
+/* 编辑态预览吃满右栏 */
+.resume-edit-grid .resume-paper-page {
+  max-width: none;
+  margin: 0;
+}
+
+@media (max-width: 390px) {
+  .resume-paper-page {
+    padding: 22px 16px;
+  }
+  .resume-paper {
+    padding: 20px 16px;
+  }
+}

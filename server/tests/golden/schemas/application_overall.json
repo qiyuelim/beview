@@ -1,0 +1,144 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "ability_matrix": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "ability": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "importance": {
+            "enum": [
+              "高",
+              "中",
+              "低"
+            ],
+            "type": "string"
+          },
+          "risk": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "ability",
+          "importance",
+          "evidence",
+          "risk"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "confidence": {
+      "enum": [
+        "高",
+        "中",
+        "低"
+      ],
+      "type": "string"
+    },
+    "improvements": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "priority": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "problem": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "priority",
+          "problem",
+          "action"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "keep_answers": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "loss_points": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "match": {
+      "enum": [
+        "高",
+        "中高",
+        "中",
+        "中低",
+        "低"
+      ],
+      "type": "string"
+    },
+    "performance": {
+      "enum": [
+        "优秀",
+        "良好",
+        "一般",
+        "偏弱"
+      ],
+      "type": "string"
+    },
+    "report": {
+      "type": "string"
+    },
+    "retrain_answers": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "risks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "strengths": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "performance",
+    "match",
+    "confidence",
+    "summary",
+    "strengths",
+    "risks",
+    "loss_points",
+    "keep_answers",
+    "retrain_answers",
+    "ability_matrix",
+    "improvements",
+    "report"
+  ],
+  "type": "object"
+}

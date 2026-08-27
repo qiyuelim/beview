@@ -1,0 +1,19 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "feedback": {
+      "type": "string"
+    },
+    "score": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "score",
+    "feedback"
+  ],
+  "type": "object"
+}

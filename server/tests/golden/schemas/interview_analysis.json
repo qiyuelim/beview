@@ -1,0 +1,82 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "difficulty": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "feedback": {
+      "type": "string"
+    },
+    "new_skill": {
+      "additionalProperties": false,
+      "properties": {
+        "l1": {
+          "type": "string"
+        },
+        "l2": {
+          "type": "string"
+        },
+        "l3": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "l1",
+        "l2",
+        "l3"
+      ],
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "question_type": {
+      "enum": [
+        "motivation_culture_fit",
+        "experience_track_record",
+        "professional_knowledge",
+        "scenario_case",
+        "practice_execution",
+        "problem_solving_resilience",
+        "collaboration"
+      ],
+      "type": "string"
+    },
+    "ref_answer": {
+      "type": "string"
+    },
+    "score": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "skill_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 3,
+      "type": "array"
+    }
+  },
+  "required": [
+    "skill_path",
+    "new_skill",
+    "question_type",
+    "tags",
+    "difficulty",
+    "ref_answer",
+    "score",
+    "feedback"
+  ],
+  "type": "object"
+}

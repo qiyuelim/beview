@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+/* ============================================================
+   设计语言 v2 · 数据驾驶舱（ADR-0015；主色经用户裁决修订为素雅灰）
+   权威文档：docs/adr/0015-design-language-v2.md（D1 修订记录）
+   实现附件：design-system/ir-workbench/MASTER.md（含 Project Overrides §6）
+   双主题：亮色默认，html.dark 切换；组件只允许语义 token 取色。
+   灰阶家族 = zinc；状态语义色独立于主色（success/warning/info）。
+   2026-08 M8：styles.css 已删除（纸张/排版样式分别抽入 resume-paper.css / markdown.css）。
+   ============================================================ */
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------- 亮色主题（素雅灰；MASTER.md 色板经 Overrides §6 修订） ---------- */
+:root {
+  --background: #fafafa;
+  --foreground: #18181b;
+  --card: #ffffff;
+  --card-foreground: #18181b;
+  --heading: #18181b;
+
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --secondary: #e4e4e7;
+  --secondary-foreground: #18181b;
+  --accent: #d97706;
+  --accent-foreground: #ffffff;
+
+  --muted: #f4f4f5;
+  --muted-foreground: #52525b;
+  --border: #e4e4e7;
+  --border-strong: #d4d4d8;
+
+  --popover: #ffffff;
+  --popover-foreground: #18181b;
+  --input: #d4d4d8;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --ring: #71717a;
+
+  /* 状态语义（Badge 变体对齐词表）；success 亮色取 emerald-700：小号彩色文本对白底 ≥4.5:1（axe 1.4.3） */
+  --success: #047857;
+  --success-foreground: #ffffff;
+  --warning: #d97706;
+  --warning-foreground: #ffffff;
+  --info: #2563eb;
+  --info-foreground: #ffffff;
+
+  --radius: 0.625rem;
+}
+
+/* ---------- 暗色主题（成对定义，M1 定稿） ---------- */
+.dark {
+  --background: #0a0a0b;
+  --foreground: #e4e4e7;
+  --card: #131316;
+  --card-foreground: #e4e4e7;
+  --heading: #f4f4f5;
+
+  --primary: #fafafa;
+  --primary-foreground: #18181b;
+  --secondary: #27272a;
+  --secondary-foreground: #d4d4d8;
+  --accent: #f59e0b;
+  --accent-foreground: #1c1917;
+
+  --muted: #1c1c1f;
+  --muted-foreground: #a1a1aa;
+  --border: #26262a;
+  --border-strong: #3f3f46;
+
+  --popover: #131316;
+  --popover-foreground: #e4e4e7;
+  --input: #3f3f46;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --ring: #3b82f6;
+
+  --success: #34d399;
+  --success-foreground: #052e1c;
+  --warning: #fbbf24;
+  --warning-foreground: #451a03;
+  --info: #60a5fa;
+  --info-foreground: #0b1220;
+}
+
+/* ---------- @theme 映射：生成 bg-/text-/border- 等工具类 ---------- */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-heading: var(--heading);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-input: var(--input);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-ring: var(--ring);
+
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  --font-sans: "Inter Variable", system-ui, -apple-system, "PingFang SC",
+    "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas,
+    monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    background: var(--color-background);
+    scroll-padding-top: 4.5rem;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html :where(*, *::before, *::after) {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* 壳容器契约（对齐 legacy .content > *）：子元素默认居中 1080；
+     页面自宽类（如冻结期 .resume-shell 1360，非分层）依层叠规则仍可覆盖。 */
+  .app-main-inner > * {
+    width: 100%;
+    max-width: 1080px;
+    margin-inline: auto;
+  }
+
+  /* 导航项选中态（极性无关：琥珀指示条 + 高对比背景 + 标题色加粗，ADR-0015 修订） */
+  .nav-item-active {
+    @apply relative bg-accent/10 font-semibold text-heading dark:bg-accent/15 dark:text-heading;
+  }
+  /* 桌面端左缘 3px 琥珀指示条 */
+  @media (min-width: 768px) {
+    .nav-item-active::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 6px;
+      width: 3px;
+      border-radius: 0 2px 2px 0;
+      background-color: var(--accent);
+    }
+  }
+  /* 移动端下缘 2.5px 琥珀指示条 */
+  @media (max-width: 767px) {
+    .nav-item-active::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 0;
+      height: 2.5px;
+      border-radius: 2px 2px 0 0;
+      background-color: var(--accent);
+    }
+  }
+
+  /* 选项卡/胶囊/分段控件通用高对比选中态（消灭 bg-primary/10 暗色极性塌陷） */
+  .chip-selected {
+    @apply relative bg-primary/10 text-heading font-semibold border border-primary/30 shadow-xs dark:bg-primary/20 dark:border-primary/45 dark:text-heading;
+  }
+
+  /* 琥珀强调芯片（如重要激活项、高亮状态、徽章） */
+  .chip-accent-selected {
+    @apply relative bg-accent/15 text-accent font-semibold border border-accent/40 shadow-xs dark:bg-accent/25 dark:border-accent/60;
+  }
+
+  /* 强琥珀强调（如日历选中单元格、强调卡片外圈焦点） */
+  .chip-accent-selected-strong {
+    @apply relative bg-accent/15 text-accent font-semibold ring-[1.5px] ring-accent/60 ring-inset dark:bg-accent/25 dark:ring-accent/70;
+  }
+
+  /* 可点表面：只变色/描边，不位移（MASTER 禁 layout-shifting hover） */
+  .surface-interactive {
+    @apply cursor-pointer transition-colors duration-150 hover:border-border-strong hover:bg-muted/50;
+  }
+}
+
+/* ---------- --c-* 兼容别名（M8 迁移桥） ----------
+   图表 SVG 与历史内容层曾引用 styles.css 的 --c-* token；
+   styles.css 已删，统一映射到语义 token（ADR-0015）。禁止新增 UI 引用。 */
+:root {
+  --c-primary: var(--primary);
+  --c-primary-hover: var(--primary);
+  --c-cta: var(--foreground);
+  --c-bg: var(--background);
+  --c-surface: var(--card);
+  --c-hover: var(--muted);
+  --c-text: var(--foreground);
+  --c-text-2: var(--muted-foreground);
+  --c-text-3: var(--muted-foreground);
+  --c-border: var(--border);
+  --c-border-strong: var(--border-strong);
+  --c-danger: var(--destructive);
+  --c-warn: var(--warning);
+  --c-pass: var(--success);
+  --c-star: var(--warning);
+  --c-mo: #1f6e5c;
+  --c-zhu: #b3372c;
+  --c-line: var(--border);
+  --c-backdrop: rgba(10, 10, 11, 0.5);
+  --c-focus-ring-soft: color-mix(in srgb, var(--primary) 15%, transparent);
+}

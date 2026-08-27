@@ -1,0 +1,27 @@
+/target
+server/config.toml
+server/.cargo/
+server/static/
+frontend/node_modules/
+frontend/dist/
+*.log
+*.tsbuildinfo
+backup/
+.master_key
+
+# 运行时日志
+logs/
+
+# 本机 agent 工作区
+.agents/
+.scratch/
+*.tar.gz
+
+# 环境与系统文件
+.DS_Store
+.env
+.env.*
+*.pem
+
+# docs 默认本机工作文档；仅放行对外架构介绍
+docs/*

@@ -1,0 +1,62 @@
+{
+  "age": null,
+  "certificates": [
+    {
+      "date": "占位",
+      "name": "占位"
+    }
+  ],
+  "city": null,
+  "education": [
+    {
+      "courses": [
+        "占位"
+      ],
+      "degree": "占位",
+      "school": "占位"
+    }
+  ],
+  "email": null,
+  "experience": [
+    {
+      "achievements": [
+        "占位"
+      ],
+      "company": "占位",
+      "period": "占位",
+      "responsibilities": [
+        "占位"
+      ],
+      "title": "占位"
+    }
+  ],
+  "gender": null,
+  "intent_city": null,
+  "intent_position": null,
+  "intent_salary": null,
+  "links": [
+    {
+      "label": "占位",
+      "url": "占位"
+    }
+  ],
+  "name": null,
+  "phone": null,
+  "political": null,
+  "projects": [
+    {
+      "detail": "占位",
+      "end_date": "占位",
+      "name": "占位",
+      "role": "占位",
+      "start_date": "占位",
+      "tech_stack": "占位"
+    }
+  ],
+  "self_evaluation": null,
+  "skills": [
+    "占位"
+  ],
+  "summary": null,
+  "years": null
+}

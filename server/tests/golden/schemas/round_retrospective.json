@@ -1,0 +1,183 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "abilities": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "ability": {
+            "type": "string"
+          },
+          "evidence_strength": {
+            "enum": [
+              "高",
+              "中",
+              "低",
+              "无证据",
+              null
+            ],
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "risk": {
+            "type": "string"
+          },
+          "tested": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "ability",
+          "tested",
+          "evidence_strength",
+          "risk"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "advice": {
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "高",
+        "中",
+        "低"
+      ],
+      "type": "string"
+    },
+    "improvements": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "interviewer_view": {
+      "additionalProperties": false,
+      "properties": {
+        "doubts": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "positive": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "unverified": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "positive",
+        "doubts",
+        "unverified"
+      ],
+      "type": "object"
+    },
+    "match": {
+      "enum": [
+        "高",
+        "中高",
+        "中",
+        "中低",
+        "低"
+      ],
+      "type": "string"
+    },
+    "overall": {
+      "type": "string"
+    },
+    "performance": {
+      "enum": [
+        "优秀",
+        "良好",
+        "一般",
+        "偏弱"
+      ],
+      "type": "string"
+    },
+    "problems": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "strengths": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "type": "string"
+          },
+          "point": {
+            "type": "string"
+          },
+          "why_plus": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "point",
+          "evidence",
+          "why_plus"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "weaknesses": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "better": {
+            "type": "string"
+          },
+          "impact": {
+            "type": "string"
+          },
+          "problem": {
+            "type": "string"
+          },
+          "question": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "question",
+          "problem",
+          "impact",
+          "better"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "performance",
+    "match",
+    "confidence",
+    "overall",
+    "strengths",
+    "weaknesses",
+    "abilities",
+    "interviewer_view",
+    "problems",
+    "improvements",
+    "advice"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,47 @@
+{
+  "abilities": [
+    {
+      "ability": "占位",
+      "evidence_strength": "高",
+      "risk": "占位",
+      "tested": null
+    }
+  ],
+  "advice": "占位",
+  "confidence": "高",
+  "improvements": [
+    "占位"
+  ],
+  "interviewer_view": {
+    "doubts": [
+      "占位"
+    ],
+    "positive": [
+      "占位"
+    ],
+    "unverified": [
+      "占位"
+    ]
+  },
+  "match": "高",
+  "overall": "占位",
+  "performance": "优秀",
+  "problems": [
+    "占位"
+  ],
+  "strengths": [
+    {
+      "evidence": "占位",
+      "point": "占位",
+      "why_plus": "占位"
+    }
+  ],
+  "weaknesses": [
+    {
+      "better": "占位",
+      "impact": "占位",
+      "problem": "占位",
+      "question": "占位"
+    }
+  ]
+}

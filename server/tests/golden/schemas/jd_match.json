@@ -1,0 +1,40 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "gaps": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "resume_advice": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "score": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "strengths": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "score",
+    "summary",
+    "strengths",
+    "gaps",
+    "resume_advice"
+  ],
+  "type": "object"
+}

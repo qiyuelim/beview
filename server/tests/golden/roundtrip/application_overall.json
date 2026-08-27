@@ -1,0 +1,37 @@
+{
+  "ability_matrix": [
+    {
+      "ability": "占位",
+      "evidence": "占位",
+      "importance": "高",
+      "risk": null
+    }
+  ],
+  "confidence": "高",
+  "improvements": [
+    {
+      "action": "占位",
+      "priority": null,
+      "problem": "占位"
+    }
+  ],
+  "keep_answers": [
+    "占位"
+  ],
+  "loss_points": [
+    "占位"
+  ],
+  "match": "高",
+  "performance": "优秀",
+  "report": "占位",
+  "retrain_answers": [
+    "占位"
+  ],
+  "risks": [
+    "占位"
+  ],
+  "strengths": [
+    "占位"
+  ],
+  "summary": "占位"
+}

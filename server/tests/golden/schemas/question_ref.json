@@ -1,0 +1,26 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "difficulty": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "ref_answer": {
+      "type": "string"
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "tags",
+    "difficulty",
+    "ref_answer"
+  ],
+  "type": "object"
+}

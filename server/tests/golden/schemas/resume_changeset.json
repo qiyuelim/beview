@@ -1,0 +1,45 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "changes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "enum": [
+              "update",
+              "add",
+              "remove"
+            ],
+            "type": "string"
+          },
+          "module": {
+            "type": "string"
+          },
+          "new_value": {},
+          "old_value": {},
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action",
+          "module",
+          "old_value",
+          "new_value",
+          "reason"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "summary",
+    "changes"
+  ],
+  "type": "object"
+}
